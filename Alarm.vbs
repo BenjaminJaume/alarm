@@ -1,3 +1,7 @@
+' Program: alarm.vbs
+' Author: Benjamin Jaume
+' Description: A simple script written in VBS which is an alarm to have a break from the screen every "x" minutes and gives me hints on what to do during the break
+
 Dim minutes, currentTime
 minutes = 30 'minutes
 
