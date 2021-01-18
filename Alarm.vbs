@@ -1,4 +1,4 @@
-Dim minutes
+Dim minutes, currentTime
 minutes = 30 'minutes
 
 Function firstDialogBox()
@@ -25,12 +25,14 @@ End Function
 Function alarm()
     do
         if errorCode <> "canceled" then
-            msgbox " Starting alarm for " & minutes & " minutes", 64, "Alarm"
+            currentTime = Time
+            msgbox " Starting alarm for " & minutes & " minutes. Starting at " & currentTime, 64, "Alarm"
             WScript.Sleep minutes * 60 * 1000
         end if
 
         answerTimesUpDialogBox = MsgBox("Time for a mindful break" _
             & vbnewline & vbnewline & _
+            "Alarm started at: " & currentTime & vbnewline & vbnewline & _
             "Current interval: " & minutes & " minute(s)" & vbnewline & vbnewline & _
             "- Be present here and now" & vbnewline & _
             "- Stay off the screen for a bit" & vbnewline & _
